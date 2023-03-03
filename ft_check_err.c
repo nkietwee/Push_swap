@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:08 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/02 21:18:16 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/03 12:05:04 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_check_maxmin(long *res)
 	return(-1);
 }
 
-int	ft_checkascending(long *res)
+int	ft_check_ascending(long *res)
 {
 	int	i;
 	long	tmp;
@@ -53,7 +53,7 @@ int	ft_checkascending(long *res)
 	exit(0);
 }
 
-int ft_checkrepeat(long *res)
+int ft_check_repeat(long *res)
 {
 	int	i;
 	int	round;
@@ -85,15 +85,27 @@ int ft_checkrepeat(long *res)
 	return(-1);
 }
 
-int	ft_checkarg(int argc, char **argv)
+int	ft_check_arg(int argc, char **argv)
 {
+	int	i;
+
+	i = 1;
 	(void)argv;
 	if (argc == 1)
 	{
 		ft_putstr_fd("Error :arg\n" ,2);
 		exit(0);
 	}
-	// if (argc >= 2)
+	while (i < argc )
+	{
+		if (argv[i][0] == '\0')
+		// if (argv[i] == (void *)0)
+		{
+			ft_putstr_fd("Error : argc", 2);
+			exit(0);
+		}
+		i++;
+	}
 	return(1);
 }
 

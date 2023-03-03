@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/02 20:34:52 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/03 11:51:57 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 #include<stdio.h>
 
 
-int ft_foundsym(char **str, int argc, char c);
-int	ft_checkarg(int argc, char **argv);
-int ft_countdigit(int argc, char **argv);
-int ft_checkrepeat(long *res);
-long	*ft_addnum(int argc, char **argv);
-int	ft_checkarg(int argc, char **argv);
-int	ft_checkascending(long *res);
+int	ft_check_arg(int argc, char **argv);
+int	ft_check_ascending(long *res);
+int ft_check_repeat(long *res);
 int	ft_check_maxmin(long *res);
+
+int	ft_count_len(int argc, char **argv);
+int ft_countdigit(int argc, char **argv);
+int ft_foundsym(char **str, int argc, char c);
+long	*ft_addnum(int argc, char **argv);
 
 #endif
 
