@@ -6,12 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:08 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/03 12:05:04 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:04:53 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	ft_check_maxmin(long *res)
 {

@@ -6,13 +6,13 @@
 #    By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 12:29:33 by nkietwee          #+#    #+#              #
-#    Updated: 2023/03/02 15:56:45 by nkietwee         ###   ########.fr        #
+#    Updated: 2023/03/05 23:19:17 by nkietwee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CC = gcc
+CC = cc
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -21,9 +21,13 @@ RM = rm -f
 LIBFT_PATH = libft/
 # ACTIONS_PATH = actions/
 
-SWAP_SRCS = ft_push_swap.c\
+PUSHSWAP_SRCS = ft_push_swap.c\
 			ft_push_swap_util.c\
 			ft_check_err.c\
+			ft_lstnew.c\
+			ft_lstadd_back.c\
+			ft_ra.c\
+			ft_sort3.c\
 
 LIBFT_SRCS = ft_isdigit.c\
 			ft_strlen.c\
@@ -32,11 +36,13 @@ LIBFT_SRCS = ft_isdigit.c\
 			ft_split.c\
 			ft_checknum.c\
 
-# ACTIONS_SRCS = ft_swap.c ft_rotate.c ft_reverse_rotate.c ft_push.c
 
-SRCS = $(SWAP_SRCS)\
+# ACTIONS_SRCS = ft_ra.c\
+
+
+SRCS = $(PUSHSWAP_SRCS)\
 	   $(addprefix $(LIBFT_PATH), $(LIBFT_SRCS))
-	#    $(addprefix $(ACTIONS_PATH), $(ACTIONS_SRCS))\
+	#    $(addprefix $(ACTIONS_PATH), $(ACTIONS_SRCS))
 
 
 OBJS = $(SRCS:.c=.o)
