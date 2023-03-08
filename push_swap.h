@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/06 13:55:03 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/07 22:39:44 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ int ft_foundsym(char **str, int argc, char c);
 long	*ft_addnum(int argc, char **argv, long *res);
 
 //instruction
-void	ft_ra(t_list **stack_a);
+void	ft_ra(t_list **stack);
+void	ft_rra(t_list **stack);
 
+void	ft_sa(t_list **stack);
 //sort
 void	sort_3(t_list **stack_a);
 
@@ -47,5 +49,6 @@ void	sort_3(t_list **stack_a);
 //linklist
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void    ft_lstadd_front(t_list **lst, t_list *new);
 #endif
 

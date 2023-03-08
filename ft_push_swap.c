@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/05 23:48:06 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:54:23 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,13 +128,13 @@ int main(int argc, char **argv)
 		i++;
 	}
 
+	sort_3(&stack_a);
 	// while (stack_a)
 	// {
 	// 	printf(" stack_a : %ld\n" , *( (long *) stack_a->number) );
 	// 	// printf(" stack_a : %p\n" , ( (long *) stack_a->number) );
 	// 	stack_a = stack_a->next;
 	// }
-	sort_3(&stack_a);
 	// ft_ra(0);
 	return (0);
 }
