@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   sortnumber.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 13:22:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/09 13:11:45 by nkietwee         ###   ########.fr       */
+/*   Created: 2023/03/08 13:48:00 by nkietwee          #+#    #+#             */
+/*   Updated: 2023/03/09 13:51:07 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"push_swap.h"
 
-int	ft_isdigit(char c)
+void ft_sortnumber(t_list **stack, int len)
 {
-	return(c >= '0' && c <= '9');
+	if (len == 2)
+		ft_sa(stack);
+	else if (len == 3)
+		sort_3(stack);
+	else if (len == 5)
+		sort_5(stack);
 }
-
-

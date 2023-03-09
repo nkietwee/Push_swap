@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/07 20:54:23 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:41:36 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ long *ft_addnum(int argc, char **argv, long *res)
 	// if (!res)
 	// 	return (0);
 	/* argc >= 2*/
-	if ((ft_isdigit(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
+	if ((ft_checknum(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
 	{
 		// printf("round : %d\n" ,i);
 		while (argv[i])
@@ -81,7 +81,7 @@ int ft_count_len(int argc, char **argv)
 
 	len = 0;
 	i = 1;
-	if ((ft_isdigit(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
+	if ((ft_checknum(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
 	{
 		while (argv[i])
 		{
@@ -96,7 +96,9 @@ int ft_count_len(int argc, char **argv)
 			i++;
 		}
 	}
-	if (len <= 2)
+	else
+		ft_putstr_fd("Error aaaja" ,2);
+	if (len < 2)
 		exit(0);
 	return (len);
 }
@@ -106,7 +108,7 @@ int main(int argc, char **argv)
 	long	*res;
 	int		len;
 	int		i;
-	t_list	*stack_a;
+	t_list	*stack;
 	t_list	*tmp;
 
 	ft_check_arg(argc, argv);
@@ -119,16 +121,17 @@ int main(int argc, char **argv)
 	ft_check_ascending(res);
 	ft_check_maxmin(res);
 
-	stack_a =  ft_lstnew(&res[0]);
+	stack =  ft_lstnew(&res[0]);
 	i = 1;
 	while (res[i])
 	{
 		tmp = ft_lstnew(&res[i]);
-		ft_lstadd_back(&stack_a , tmp);
+		ft_lstadd_back(&stack , tmp);
 		i++;
 	}
+	ft_sortnumber(&stack, len);
 
-	sort_3(&stack_a);
+
 	// while (stack_a)
 	// {
 	// 	printf(" stack_a : %ld\n" , *( (long *) stack_a->number) );

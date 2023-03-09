@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 11:09:29 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/05 13:38:07 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:15:17 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 
 //Mandatory
-int		ft_isdigit(char **str, int argc);
+int		ft_isdigit(char c);
 size_t	ft_strlen(const char*s);
 long		ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
-int		ft_checknum(char c);
+int		ft_checknum(char **str, int argc);
 
 //Bonus
 //t_list	*ft_lstnew(void *content);
