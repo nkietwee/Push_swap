@@ -5,39 +5,62 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 17:56:05 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/09 17:01:37 by nkietwee         ###   ########.fr       */
+/*   Created: 2023/03/11 15:32:20 by nkietwee          #+#    #+#             */
+/*   Updated: 2023/03/11 20:54:09 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+// #include<unistd.h>
+// #include<stdlib.h>
+// #include<stdio.h>
+
 #include "push_swap.h"
 
-void	ft_set_index(t_list **stack)
+// typedef struct s_list
+// {
+// 	int		number;
+// 	int 	index;
+// 	struct s_list	*next;
+// }t_list;
+
+void ft_addindex(t_list *stack)
+{
+	t_list *tmp;
+	int	i;
+
+	tmp = stack;
+	i = 1;
+	while (tmp)
+	{
+		tmp->index = i;
+		tmp = tmp->next;
+		i++;
+	}
+}
+
+void	ft_ascending(t_list *stack)
 {
 	t_list *tmp1;
 	t_list *tmp2;
 	long *temporary;
+	int	i;
 
-	tmp1 = (*stack);
-	// printf("tmp1 :%d\n" , *((int *) tmp1->number));
-	// exit(0);
-	// tmp1 = tmp1->number;
-
-	// tmp1 = (*stack)->number;
-
-	tmp2 = (*stack)->next;
-	// printf("tmp1 :%d\n" , *((int *) tmp2->number));
-	// exit(0);
+	tmp1 = stack;
+	tmp2 = stack->next;
+	i = 1;
 	while (tmp1 && tmp2)
 	{
+		// printf("Hello world\n");
 		if (tmp1->number > tmp2->number)
 		{
 			temporary = tmp1->number;
 			tmp1->number = tmp2->number;
 			tmp2->number = temporary;
-			tmp1 = (*stack);
+
+			tmp1 = stack;
 			tmp2 = tmp1->next;
-			// ft_sa(stack);
+
 		}
 		else
 		{
@@ -46,128 +69,48 @@ void	ft_set_index(t_list **stack)
 		}
 	}
 }
-int	main(void)
-{
-	int	number1 = 1;
-	int	number2 = 3;
-	int	number3 = 2;
-	int	number4 = 4;
-	int	number5 = 5;
 
-	t_list *a;
-	t_list *b;
-	t_list *c;
-	t_list *d;
-	t_list *e;
-
-	a = malloc(sizeof(t_list));
-	b = malloc(sizeof(t_list));
-	c = malloc(sizeof(t_list));
-	d = malloc(sizeof(t_list));
-	e = malloc(sizeof(t_list));
-
-	a->number =  &number1;
-	a->next = b;
-
-	b->number =  &number2;
-	b->next = c;
-
-	c->number =  &number3;
-	c->next = d;
-
-	d->number =  &number4;
-	d->next = e;
-
-	e->number =  &number5;
-	e->next = NULL;
-
-	ft_set_index(&a);
-	// printf(" bf : %d\n" , *((int *)a->number));
-	while (a)
-	{
-		// printf(" before : %lu\n" , *((long *)a->number));
-		printf(" bf : %d\n" , *((int *)a->number));
-		a = a->next;
-	}
-
-	// t_list *new;
-	// new1  = ft_lstnew(a);
-	// ft_lstadd_back();
-}
-
-// void	ft_set_index(t_list **stack)
+// int	main()
 // {
-// 	t_list *tmp1;
-// 	t_list *tmp2;
-// 	t_list *res; // result
+// 	int	number1 = -10;
+// 	int	number2 = 6;
+// 	int	number3 = 24;
+// 	int	number4 = 5;
+// 	int	number5 = 47;
 
-// 	tmp1 = (*stack);
-// 	tmp2 = (*stack)->next;
-// 	while (tmp1)
+// 	t_list *a;
+// 	t_list *b;
+// 	t_list *c;
+// 	t_list *d;
+// 	t_list *e;
+
+// 	a = malloc(sizeof(t_list));
+// 	b = malloc(sizeof(t_list));
+// 	c = malloc(sizeof(t_list));
+// 	d = malloc(sizeof(t_list));
+// 	e = malloc(sizeof(t_list));
+
+// 	a->number =  number1;
+// 	a->next = b;
+
+// 	b->number =  number2;
+// 	b->next = c;
+
+// 	c->number =  number3;
+// 	c->next = d;
+
+// 	d->number =  number4;
+// 	d->next = e;
+
+// 	e->number =  number5;
+// 	e->next = NULL;
+
+// 	ft_ascending(a);
+// 	ft_addindex(a);
+// 	while (a)
 // 	{
-// 		if (tmp1 > tmp2)
-// 		{
-// 			res = tmp2;
-// 			tmp2 = tmp1;
-// 			tmp1 = res;
-// 			tmp1 = (*stack);
-// 		}
-// 		else
-// 			tmp1 = tmp1->next;
-
+// 		printf(" value bf : %d\n" , a->number);
+// 		printf(" 				indexbf : %d\n" , a->index);
+// 		a = a->next;
 // 	}
 // }
-
-// void sort_int_tab(int *tab, int len)
-// {
-// 	int	i;
-// 	int tmp;
-
-// 	i = 0;
-// 	// tab[i] = tab[0];
-// 	while (i < len - 1)
-// 	{
-// 		if (tab[i] > tab[i + 1])
-// 		{
-// 			tmp = tab[i];
-// 			tab[i] = tab[i + 1];
-// 			tab[i + 1] = tmp;
-// 			i = 0;
-// 		}
-// 		else
-// 			i++;
-// 	}
-// }
-
-// int main(void)
-// {
-// 	int *tab = malloc(sizeof(int ) * 10);
-// 	tab[0] = 5;
-// 	tab[1] = 2;
-// 	tab[2] = 3;
-// 	tab[3] = 9;
-// 	tab[4] = 15;
-
-// 	int	i = 0;
-// 	sort_int_tab(tab, 5);
-// 	while (i < 5)
-// 	{
-// 		printf(" tab[%d] : %d\n" ,i,tab[i]);
-// 		i++;
-// 	}
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-

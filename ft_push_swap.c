@@ -6,36 +6,12 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 14:57:40 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:24:40 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include<unistd.h>
-// #include<stdio.h>
 #include "push_swap.h"
-// int ft_countdigit(int argc, char **argv)
-// {
-// 	int	i;
-// 	int	j;
-// 	int	count;
-// 	char **nbr;
 
-// 	i = 1;
-// 	j = 0;
-// 	count = 0;
-// 	if (i < argc)
-// 	{
-// 		nbr = ft_split(argv[i], ' ');
-// 		while (nbr[j] != NULL)
-// 		{
-// 			if ((ft_isdigit(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1)
-// 			&& (ft_foundsym(argv, argc, '+') == 1))
-// 				count++;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 // long *ft_addnum(int argc, char **argv, long *res)
 long	*ft_addnum(int argc, char **argv, long *res)
 {

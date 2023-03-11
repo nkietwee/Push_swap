@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 14:54:20 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/11 17:01:10 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 #include <ctype.h> // isdigit
 typedef struct s_list
 {
-	// int		number;
 	void	*number;
+	// long	number;
+	int		index;
 	// long	*number;
 	struct s_list	*next;
 }t_list;
@@ -55,9 +56,14 @@ void	ft_sa(t_list **stack);
 void ft_sortnumber(t_list **stack, t_list **stack_cpy, int len);
 
 void	sort_3(t_list **stack);
+void	sort_5(t_list **stack, t_list **stack_cpy, int len);
+// void	ft_set_index(t_list **stack);
+void	ft_ascending(t_list *stack);
+void	ft_addindex(t_list *stack);
 
-void	sort_5(t_list **stack);
-void	ft_set_index(t_list **stack);
+
+void ft_testascend(t_list  **stack, int len);
+void	ft_setzero(t_list **stack);
 
 //linklist
 t_list	*ft_lstnew(void *content);
