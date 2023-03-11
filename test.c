@@ -60,7 +60,7 @@ void	ft_ascending(t_list *stack)
 
 int	main()
 {
-	int	number1 = 10;
+	int	number1 = -10;
 	int	number2 = 6;
 	int	number3 = 24;
 	int	number4 = 5;
