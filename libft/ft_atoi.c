@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 19:04:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 14:31:53 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:17:06 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long	ft_atoi(const char *str)
 {
 	int	i;
-	int	symbol;
+	long	symbol;
 	long	result;
 
 	i = 0;
@@ -34,21 +34,25 @@ long	ft_atoi(const char *str)
 	{
 		result = result * 10 +(str[i] - '0');
 		i++;
+		// if ((result > 2147483647 && symbol == 1) || (result > 2147483648 && symbol == -1))
+		// {
+		// 	return(0);
+		// }
 	}
 	return (result * symbol);
 }
 
-/*
-int main(int argc ,char **argv)
-{
-	int	i;
+// #include<stdio.h>
+// int main(int argc ,char **argv)
+// {
+// 	int	i;
 
-	i = 1;
-	while(i < argc)
-	{
-		long num = ft_atoi(argv[i]);
-		printf("%ld\n" ,num);
-		i++;
-	}
+// 	i = 1;
+// 	while(i < argc)
+// 	{
+// 		int num = ft_atoi(argv[i]);
+// 		printf("%d\n" ,num);
+// 		i++;
+// 	}
 
-}*/
+// }

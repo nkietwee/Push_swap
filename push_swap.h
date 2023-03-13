@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 17:01:10 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:24:14 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@
 typedef struct s_list
 {
 	void	*number;
-	// long	number;
 	int		index;
 	// long	*number;
 	struct s_list	*next;
 }t_list;
 
 //check err
-
+int	ft_checknum(char **str, int argc);
 int		ft_check_arg(int argc, char **argv);
-int		ft_check_ascending(long *res);
+// int		ft_check_ascending(int *res);
+// int		ft_check_repeat(int *res);
+// int		ft_check_maxmin(long *res);
+int	ft_check_ascending(long *res);
 int		ft_check_repeat(long *res);
 int		ft_check_maxmin(long *res);
 
@@ -39,6 +41,7 @@ int		ft_count_len(int argc, char **argv);
 int		ft_countdigit(int argc, char **argv);
 int		ft_foundsym(char **str, int argc, char c);
 long	*ft_addnum(int argc, char **argv, long *res);
+// long	*ft_addnum(int argc, char **argv, long *res);
 
 void ft_printstack_1(t_list *stack);
 void ft_printstack_2(t_list **stack);
@@ -52,11 +55,13 @@ void	ft_ra(t_list **stack);
 void	ft_rra(t_list **stack);
 
 void	ft_sa(t_list **stack);
+
 //sort
 void ft_sortnumber(t_list **stack, t_list **stack_cpy, int len);
 
 void	sort_3(t_list **stack);
 void	sort_5(t_list **stack, t_list **stack_cpy, int len);
+
 // void	ft_set_index(t_list **stack);
 void	ft_ascending(t_list *stack);
 void	ft_addindex(t_list *stack);

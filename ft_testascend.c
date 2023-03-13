@@ -6,11 +6,23 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 16:12:19 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 20:55:50 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 14:31:39 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void ft_printstack_1(t_list *stack)
+// {
+// 	while (stack)
+// 	{
+// 		// printf("round\n");
+// 		printf("%lu\n" , *((long *)(stack)->number));
+// 		printf("	index : %d\n" , ((int)((stack)->index)));
+// 		(stack) = (stack)->next;
+// 	}
+// 	// exit(0);
+// }
 
 void	ft_setzero(t_list **stack)
 {
@@ -21,70 +33,69 @@ void	ft_setzero(t_list **stack)
 	i = 0;
 	while(tmp)
 	{
-		(*stack) ->index = i;
+		(tmp) ->index = i;
 		tmp = tmp->next;
 	}
 }
 
 void ft_testascend(t_list  **stack, int len)
 {
-	(void)len;
-	// printf("before sezero");
+	t_list *tmp;
+	t_list *max;
+	long num_tmp;
+
 	ft_setzero(stack);
-
-	// ft_printstack_2(stack);
-	// exit(0);
-	// t_list *tmp;
-	t_list *num1;
-	t_list *num2;
-	int	i;
-	int round;
-
-	i = 1;
-	round = 0;
-
-	long tmp = -2147483648;
-	long tmp2 = tmp;
-
-	// tmp = (*stack);
-	num1 = (*stack);
-	// printf("num1 : %lu\n" , *((long *)num1->number));
-	num2 = (*stack)->next;
-	// printf("num2 : %lu\n" , *((long *)num2->number));
-	// exit(0);
-	printf("hello\n");
-	while (i < len  )
+	if(!stack)
+		return;
+	while (len > 0 )
 	{
-		// while (num1 && num2)
-		// round = 0;
-		while (round < len--)
+		num_tmp = -2147483648;
+		tmp = (*stack);
+		while (tmp)
 		{
-			round++;
-			printf("round : %d\n" ,round);
-			if (tmp >= tmp2 && num1->number < num2->number)
+			if (( *((long *)tmp->number) > num_tmp) && ( ((int)tmp->index) < len))
 			{
-				tmp = (long)num1->number;
-				(*stack)->index = i;
-				// printf("index : %d\n", ( ((int ) ((*stack)->index))));
-				num1 = (*stack);
-				num2 = (*stack)->next;
+				max = tmp;
+				num_tmp = *((long *)tmp->number);
 			}
-			else
-			{
-				num1 = num1->next;
-				num2 = num1->next;
-			}
+			tmp = tmp->next;
 		}
-		i++;
+		max->index = len;
+		len--;
 	}
-
 }
 
-/*
+// void ft_testascend(t_list  **stack, int len)
+// {
+// 	(void)len;
+// 	ft_setzero(stack);
+// 	t_list *tmp;
+// 	// t_list *max;
+// 	t_list *min;
+
+// 	long num_tmp;
+// 	while (len > 0 )
+// 	{
+// 		num_tmp = 2147483647;
+// 		tmp = (*stack);
+// 		while (tmp)
+// 		{
+// 			if (( *((long *)tmp->number) < num_tmp) && ( ((int)tmp->index) > len))
+// 			{
+// 				min = tmp;
+// 				num_tmp = *((long *)tmp->number);
+// 			}
+// 			tmp = tmp->next;
+// 		}
+// 		min->index = len;
+// 		len--;
+// 	}
+// }
+
 // int	main(void)
 // {
 // 	long	number1 = 10;
-// 	long	number2 = -3;
+// 	long	number2 = 3;
 // 	long	number3 = 23;
 // 	long	number4 = 422;
 // 	long	number5 = 51;
@@ -116,19 +127,9 @@ void ft_testascend(t_list  **stack, int len)
 // 	e->number =  &number5;
 // 	e->next = NULL;
 
-// 	ft_testascend(a, 5);
+// 	ft_testascend(&a, 5);
+// 	ft_printstack_1(a);
 
 
-// 	// printf(" bf : %d\n" , *((int *)a->number));
-// 	while (a)
-// 	{
-// 		// printf(" before : %lu\n" , *((long *)a->number));
-// 		printf(" bf : %ld\n" , *((long *)a->number));
-// 		a = a->next;
-// 	}
+// }
 
-// 	// t_list *new;
-// 	// new1  = ft_lstnew(a);
-// 	// ft_lstadd_back();
-}
-*/

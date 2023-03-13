@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 16:24:40 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:28:48 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ long	*ft_addnum(int argc, char **argv, long *res)
 			while (nbr[j] != NULL)
 			{
 				res[k] = ft_atoi(nbr[j]);
-				// printf("  	s[%d] : %ld\n", k, res[k]);
 				j++;
 				k++;
 			}
@@ -87,7 +86,6 @@ int main(int argc, char **argv)
 	int		len;
 	t_list	*stack=NULL;
 	t_list	*stack_cpy=NULL;
-	// t_list	*tmp;
 
 	ft_check_arg(argc, argv);
 	len = ft_count_len(argc, argv);
@@ -95,12 +93,11 @@ int main(int argc, char **argv)
 	if (!res)
 		return (0);
 	res = ft_addnum(argc, argv ,res);
-	// printf("res1: %lu\n" ,res[2]);
-
 	ft_check_repeat(res);
 	ft_check_ascending(res);
 	ft_check_maxmin(res);
 
+	// ft_printstack_1(stack);
 	ft_createstack(res, &stack, len); //protect null?
 	ft_createstack(res, &stack_cpy, len);
 	ft_sortnumber(&stack, &stack_cpy, len);
