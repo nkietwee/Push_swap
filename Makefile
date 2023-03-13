@@ -6,7 +6,7 @@
 #    By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 12:29:33 by nkietwee          #+#    #+#              #
-#    Updated: 2023/03/13 14:33:31 by nkietwee         ###   ########.fr        #
+#    Updated: 2023/03/13 17:43:47 by nkietwee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,15 @@ PUSHSWAP_SRCS = ft_push_swap.c\
 			ft_lstnew.c\
 			ft_lstadd_back.c\
 			ft_lstadd_front.c\
+			ft_lstlast.c\
 			sortnumber.c\
-			ft_ra.c\
-			ft_rra.c\
-			ft_sa.c\
+			ft_r_actions.c\
+			ft_rr_actions.c\
+			ft_s_actions.c\
+			ft_p_actions.c\
 			ft_sort3.c\
 			ft_sort5.c\
 			ft_create_printstack.c\
-			ft_testascend.c\
 
 LIBFT_SRCS = ft_isdigit.c\
 			ft_strlen.c\

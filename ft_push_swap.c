@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:28:48 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:37:33 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 	long	*res;
 	int		len;
 	t_list	*stack=NULL;
-	t_list	*stack_cpy=NULL;
+	// t_list	*stack_cpy=NULL;
 
 	ft_check_arg(argc, argv);
 	len = ft_count_len(argc, argv);
@@ -99,8 +99,8 @@ int main(int argc, char **argv)
 
 	// ft_printstack_1(stack);
 	ft_createstack(res, &stack, len); //protect null?
-	ft_createstack(res, &stack_cpy, len);
-	ft_sortnumber(&stack, &stack_cpy, len);
+	// ft_createstack(res, &stack_cpy, len);
+	ft_sortnumber(&stack, len);
 
 
 

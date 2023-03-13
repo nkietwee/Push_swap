@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:27:38 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:35:02 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void ft_createstack(long *res, t_list **stack, int len) // why use double pointe
 		ft_lstadd_back(stack, tmp);
 		i++;
 	}
-	ft_printstack_1(*stack);
-	// printf("finish1\n");
-	// exit(0);
+	// ft_printstack_1(*stack);
 }
 
 void ft_printstack_1(t_list *stack)

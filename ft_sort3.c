@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:19:51 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/09 13:17:08 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:43:47 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void sort_3(t_list **stack)
 	}
 	else if (top > mid && top > bot &&  mid < bot)
 		ft_ra(stack);
-	else if (top < mid && mid > bot && top < bot)
+	else if (top < mid && mid > bot && top < bot) // 1 5 3
 	{
 		ft_rra(stack);
 		ft_sa(stack);
