@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 14:21:55 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:36:09 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void ft_printstack_1(t_list *stack)
 		// printf("     index %ld\n" , ((long)(stack)->index));
 		(stack) = (stack)->next;
 	}
-	// exit(0);
 }
 
 void ft_printstack_2(t_list **stack)

@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:37:33 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:36:59 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,12 @@ int main(int argc, char **argv)
 	ft_check_ascending(res);
 	ft_check_maxmin(res);
 
-	// ft_printstack_1(stack);
 	ft_createstack(res, &stack, len); //protect null?
-	// ft_createstack(res, &stack_cpy, len);
+	// printf("Hello world\n");
+	// if (len == 6)
+	// 	ft_printstack_1(stack); // why I can't print zero
+	// exit(0);
+
 	ft_sortnumber(&stack, len);
 
 

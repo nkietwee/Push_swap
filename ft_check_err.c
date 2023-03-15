@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:08 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:29:53 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:34:01 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,13 +121,6 @@ int ft_foundsym(char **str, int argc, char c)
 		j = 0;
 		while (str[i][j])
 		{
-			// if ((str[i][j] == c) && ((str[i][j+ 1] >= 33 && str[i][j + 1] <= 47)
-			// 	|| ((str[i][j+ 1] >= 58 && str[i][j + 1] <= 126)) ) && str[i])
-
-			// if ( (str[i][j] == c && str[i][j + 1] == 32)
-			// || (str[i][j] == c && str[i][j + 1] == '\0')
-			// || (str[i][j] == c && str[i][j + 1] == c))
-			//  if (str[i][j] == c && !ft_checknum(str[i][j + 1]) && str[i][j])
 			if (str[i][j] == c && !ft_isdigit(str[i][j + 1]))
 			{
 				ft_putstr_fd("Error :number" ,2);
