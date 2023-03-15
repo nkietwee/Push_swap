@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 18:59:49 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:06:57 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ void ft_createstack(long *res, t_list **stack, int len);
 
 //instruction
 void	ft_ra(t_list **stack);
+void	ft_rb(t_list **stack);
 void	ft_rra(t_list **stack);
+void	ft_rrb(t_list **stack);
+void	ft_rr(t_list **stack_a, t_list **stack_b);
+void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 void	ft_sa(t_list **stack);
 void	ft_pa(t_list **stack_a, t_list **stack_b);

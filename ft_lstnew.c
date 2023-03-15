@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:25:42 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/05 13:39:48 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:43:54 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	new -> number = content;
 	new -> next = NULL;
-	return (new);
+	return (new); // return address
 }

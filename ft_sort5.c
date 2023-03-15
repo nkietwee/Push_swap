@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 19:01:46 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:33:38 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,43 +53,55 @@ void ft_ascend(t_list  **stack, int len)
 	}
 }
 
-void sort_5(t_list **stack, int len)
+void sort_5(t_list **stack_a, int len)
 {
 	int	i;
-	t_list *tmp;
+	t_list *tmp_a;
 	t_list *stack_b=NULL;
 
 	i = len;
-	tmp = (*stack);
-	ft_ascend(stack, len);
-	// ft_printstack_2(stack);
-	// printf("len : %d\n" ,len);
+	tmp_a = (*stack_a);
+	ft_ascend(&tmp_a, len);
+	// ft_printstack_2(&tmp_a);
 	// exit(0);
-	while (len > 0)
+
+	while (i > 3)
 	{
-		while (i > 3)
+		// printf("index : %d\n" , ((int)tmp_a->index ));
+		// printf("i : %d\n" , i);
+		if (( ((int)tmp_a->index ) <= len / 2 )) // index = 1 | 2
 		{
-			if (tmp->index <= len / 2)
-			{
-				ft_pb(&tmp, &stack_b);
-					printf("pb_a1\n");
-						ft_printstack_1(tmp);
-					printf("pb_b1\n");
-						ft_printstack_1(stack_b);
-				printf("-------------");
-				ft_pa(&tmp, &stack_b);
-					printf("pb_a1\n");
-						ft_printstack_1(tmp);
-					printf("pb_b1\n");
-						ft_printstack_1(stack_b);
-				exit(0);
-			}
-			// else if (tmp->index <= len > 2)
-			// {
-			// }
+
+			ft_pb(&tmp_a, &stack_b);
+				// printf("stack_a\n");
+				// ft_printstack_2(&tmp_a);
+				// printf("stack_b\n");
+				// ft_printstack_2(&stack_b);
+			// exit(0);
+			i--;
 		}
+		else
+			tmp_a = tmp_a->next;
+		// printf("be_index : %d\n" , ((int)tmp_a->index ));
+		// printf("     be_value %lu\n" , *((long *)tmp_a->number ));
+		// printf("af_index : %d\n" , ((int)tmp_a->index ));
+		// printf("     af_value %lu\n" , *((long *)tmp_a->number ));
+		// exit(0);
+		// printf("i : %d\n" , i);
+		if (i == 3)
+		{
+			break;
+		}
+	}
+	while (i > 0)
+	{
+		if ()
+
 
 	}
-	// ft_printstack_1(*stack);
-	// ft_printstack_2(&stack_b);
+	printf("stack_a\n");
+			ft_printstack_2(&tmp_a);
+	printf("stack_b\n");
+			ft_printstack_2(&stack_b);
+	exit(0);
 }

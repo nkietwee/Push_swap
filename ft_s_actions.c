@@ -6,10 +6,9 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:08:39 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 16:08:59 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:03:27 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include"push_swap.h"
 
@@ -34,5 +33,5 @@ void ft_sb(t_list **stack)
 	tmp->next = (*stack)->next;
 	// (*stack) = tmp;
 	(*stack)->next=tmp;
-	write(1, "sa\n", 3);
+	write(1, "sb\n", 3);
 }

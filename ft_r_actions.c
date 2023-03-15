@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:06:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 19:04:47 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 02:05:26 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_rb(t_list **stack)
 	write(1, "rb\n", 3);
 }
 //CANNOT TEST
-void ft_rrr(t_list **stack_a, t_list **stack_b)
+void ft_rr(t_list **stack_a, t_list **stack_b)
 {
 	t_list *tmp_a;
 	t_list *tmp_b;
@@ -44,14 +44,13 @@ void ft_rrr(t_list **stack_a, t_list **stack_b)
 	tmp_a = (*stack_a);
 	(*stack_a) = (*stack_a)->next;
 	tmp_a->next = NULL;
-	(*stack_a)->next = tmp_a;
-
+	ft_lstadd_back(stack_a, tmp_a);
 
 	tmp_b = (*stack_b);
 	(*stack_b) = (*stack_b)->next;
 	tmp_b->next = NULL;
-	(*stack_b)->next = tmp_b;
-
+	ft_lstadd_back(stack_b, tmp_b);
+	write(1, "rrr\n", 4);
 }
 
 // //Why It wrong
