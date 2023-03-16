@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/16 12:10:03 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/16 21:10:35 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void ft_printstack_1(t_list *stack)
 {
 	while (stack)
 	{
-		// printf("round\n");
 		printf("value %ld\n" , *((long *)(stack)->number));
 		// printf("     index %ld\n" , ((long)(stack)->index));
 		(stack) = (stack)->next;
@@ -45,9 +44,9 @@ void ft_printstack_2(t_list **stack)
 {
 	while ((*stack))
 	{
-		// printf("round\n");
-		printf("value : %ld\n" , *((long *)((*stack)->number)));
-		printf("	index : %ld\n" , ((long)((*stack)->index)));
+		printf("value : %ld | index : %ld\n" , *((long *)((*stack)->number)) , ((long)((*stack)->index)) );
+		// printf("value : %ld\n" , *((long *)((*stack)->number)));
+		// printf("	index : %ld\n" , ((long)((*stack)->index)));
 		(*stack) = (*stack) ->next;
 	}
 }
