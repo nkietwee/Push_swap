@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:48:00 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 17:11:15 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/16 11:35:30 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void ft_sortnumber(t_list **stack, int len)
 
 	//stack_cpy for sort5
 	// ft_printstack_2(stack_cpy);
-	// if (len == 2)
-	// 	ft_sa(stack);
-	// else if (len == 3)
-	// 	sort_3(stack);
-	// else if (len == 5)
-	// 	sort_5(stack, len);
+	if (len == 2)
+		ft_sa(stack);
+	else if (len == 3)
+		sort_3(stack);
+	else if (len == 5)
+		sort_5(stack, len);
 	// printf("testsort\n");
-	if (len >= 2)
-		test_sort6(stack, len);
+	// if (len >= 2)
+	// 	test_sort6(stack, len);
 
 
 }

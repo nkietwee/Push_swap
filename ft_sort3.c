@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:19:51 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 14:31:49 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/16 11:47:02 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void sort_3(t_list **stack)
 	mid = *((long *)((*stack)->next->number));
 	bot = *((long *)((*stack)->next->next->number));
 
-	printf("top : %ld\n" ,top);
-	printf("mid : %ld\n" ,mid);
-	printf("bot : %ld\n" ,bot);
+	// printf("top : %ld\n" ,top);
+	// printf("mid : %ld\n" ,mid);
+	// printf("bot : %ld\n" ,bot);
 	if (top > mid && mid < bot && top < bot)
 		ft_sa(stack);
 	else if (top > mid && mid > bot && top > bot)
@@ -42,20 +42,20 @@ void sort_3(t_list **stack)
 	else if (top < mid && top > bot && mid > bot)
 		ft_rra(stack);
 	// else if (top < mid && top < bot && mid < bot) // ascending number for sort 5
-		// 
+		//
 
 
-	long top2;
-	long mid2;
-	long bot2;
+	// long top2;
+	// long mid2;
+	// long bot2;
 
-	top2 = * ((long *)(*stack)->number);
-	mid2 = *((long *)((*stack)->next->number));
-	bot2 = *((long *)((*stack)->next->next->number));
+	// top2 = * ((long *)(*stack)->number);
+	// mid2 = *((long *)((*stack)->next->number));
+	// bot2 = *((long *)((*stack)->next->next->number));
 
-	printf("top : %ld\n" ,top2);
-	printf("mid : %ld\n" ,mid2);
-	printf("bot : %ld\n" ,bot2);
+	// printf("top : %ld\n" ,top2);
+	// printf("mid : %ld\n" ,mid2);
+	// printf("bot : %ld\n" ,bot2);
 
 
 

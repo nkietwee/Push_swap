@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 21:26:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/07 21:28:48 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/15 23:38:06 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,4 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
         new->next = *lst;
         *lst = new;
 }
+

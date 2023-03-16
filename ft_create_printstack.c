@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 16:36:09 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:10:03 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,28 @@ void ft_printstack_2(t_list **stack)
 	{
 		// printf("round\n");
 		printf("value : %ld\n" , *((long *)((*stack)->number)));
-		// printf("	index : %ld\n" , ((long)((*stack)->index)));
+		printf("	index : %ld\n" , ((long)((*stack)->index)));
 		(*stack) = (*stack) ->next;
 	}
 }
 
+void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b)
+{
+	printf("---stack_a---\n");
+		ft_printstack_1(stack_a);
+	printf("---stack_b---\n");
+		ft_printstack_1(stack_b);
+
+}
+
+void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b)
+{
+	printf("---stack_a---\n");
+		ft_printstack_2(stack_a);
+	printf("---stack_b---\n");
+		ft_printstack_2(stack_b);
+
+}
 
 // void ft_createstack(int *res, t_list **stack, int len) // why use double pointer of stack
 // {

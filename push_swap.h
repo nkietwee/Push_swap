@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 19:03:37 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:07:31 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ long	*ft_addnum(int argc, char **argv, long *res);
 
 void ft_printstack_1(t_list *stack);
 void ft_printstack_2(t_list **stack);
+void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
+void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
 void ft_createstack(long *res, t_list **stack, int len);
 
 //instruction
