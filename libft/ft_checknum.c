@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:38:04 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:09:59 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:30:16 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,9 @@ int	ft_checknum(char **str, int argc)
 		j = 0;
 		while (str[i][j])
 		{
-			// printf("i : %d\n",i);
-			// printf("j : %d\n",j);
-			// if (! (str[i][j] >= '0' && str[i][j] <= '9' && str[i][j] == 32) )
 			if (! (str[i][j] >= '0' && str[i][j] <= '9') && !(str[i][j] == 32)
 			&& !(str[i][j] == '-') && !(str[i][j] == '+'))
 			{
-				// printf("str[i][j] : %c\n", str[i][j]);
 				return (0);
 			}
 			j++;

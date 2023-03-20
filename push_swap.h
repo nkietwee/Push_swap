@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/16 12:07:31 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/20 23:22:18 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ typedef struct s_list
 //check err
 int	ft_checknum(char **str, int argc);
 int		ft_check_arg(int argc, char **argv);
-// int		ft_check_ascending(int *res);
-// int		ft_check_repeat(int *res);
-// int		ft_check_maxmin(long *res);
 int	ft_check_ascending(long *res);
 int		ft_check_repeat(long *res);
 int		ft_check_maxmin(long *res);
@@ -40,13 +37,14 @@ int		ft_check_maxmin(long *res);
 int		ft_count_len(int argc, char **argv);
 int		ft_countdigit(int argc, char **argv);
 int		ft_foundsym(char **str, int argc, char c);
-long	*ft_addnum(int argc, char **argv, long *res);
+void	ft_addnum(int argc, char **argv, long *res);
 
 void ft_printstack_1(t_list *stack);
 void ft_printstack_2(t_list **stack);
 void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
 void ft_createstack(long *res, t_list **stack, int len);
+// void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 
 //instruction
 void	ft_ra(t_list **stack);
@@ -64,16 +62,17 @@ void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
 
 //sort
-void ft_sortnumber(t_list **stack, int len);
+void	ft_sortnumber(t_list **stack, int len);
 
 void	sort_3(t_list **stack);
 
 void	test_sort6(t_list **stack_a, int len);
-void	sort_5(t_list **stack, int len);
-void ft_ascend(t_list  **stack, int len);
+void	sort_5(t_list **stack_a,t_list *stack_b,  int len);
+void	ft_ascend(t_list  **stack, int len);
 void	ft_setzero(t_list **stack);
+void	ft_sortradix(t_list **stack_a, t_list *stack_b,int len);
+int		ft_countbase2(int len);
 
-// void	ft_set_index(t_list **stack);
 void	ft_ascending(t_list *stack);
 void	ft_addindex(t_list *stack);
 

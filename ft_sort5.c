@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/16 22:05:29 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/19 18:48:31 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void ft_ascend(t_list  **stack, int len)
 		len--;
 	}
 }
-void sort_5(t_list **stack_a, int len)
+// 2 3 -4 0 -1
+void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 {
 	int	count;
 	int	top;
 	int	round;
 	t_list *tmp_a;
 	t_list *tmp_b;
-	t_list *stack_b=NULL;
 
 	count = len;
 	top = 1;

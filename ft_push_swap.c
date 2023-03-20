@@ -6,14 +6,14 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 16:36:59 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/19 23:06:31 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // long *ft_addnum(int argc, char **argv, long *res)
-long	*ft_addnum(int argc, char **argv, long *res)
+void ft_addnum(int argc, char **argv, long *res)
 {
 	int i;
 	int j;
@@ -30,7 +30,6 @@ long	*ft_addnum(int argc, char **argv, long *res)
 	/* argc >= 2*/
 	if ((ft_checknum(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
 	{
-		// printf("round : %d\n" ,i);
 		while (argv[i])
 		{
 			j = 0;
@@ -44,9 +43,7 @@ long	*ft_addnum(int argc, char **argv, long *res)
 			i++;
 		}
 	}
-	// printf("%lu" ,res[2]);
 	res[k] = '\0';
-	return (res);
 }
 
 int ft_count_len(int argc, char **argv)
@@ -85,43 +82,24 @@ int main(int argc, char **argv)
 	long	*res;
 	int		len;
 	t_list	*stack=NULL;
-	// t_list	*stack_cpy=NULL;
 
 	ft_check_arg(argc, argv);
 	len = ft_count_len(argc, argv);
 	res = (long *)malloc(sizeof(long) * (len + 1));
 	if (!res)
 		return (0);
-	res = ft_addnum(argc, argv ,res);
+	// res = ft_addnum(argc, argv ,res);
+	ft_addnum(argc, argv ,res);
 	ft_check_repeat(res);
 	ft_check_ascending(res);
+	// printf("%ld\n", res[0]);
 	ft_check_maxmin(res);
 
 	ft_createstack(res, &stack, len); //protect null?
-	// printf("Hello world\n");
 	// if (len == 6)
 	// 	ft_printstack_1(stack); // why I can't print zero
-	// exit(0);
 
 	ft_sortnumber(&stack, len);
 
-
-
-	// stack =  ft_lstnew(&res[0]);
-	// i = 1;
-	// while (res[i])
-	// {
-	// 	tmp = ft_lstnew(&res[i]);
-	// 	ft_lstadd_back(&stack , tmp);
-	// 	i++;
-	// }
-
-	// while (stack_a)
-	// {
-	// 	printf(" stack_a : %ld\n" , *( (long *) stack_a->number) );
-	// 	// printf(" stack_a : %p\n" , ( (long *) stack_a->number) );
-	// 	stack_a = stack_a->next;
-	// }
-	// ft_ra(0);
 	return (0);
 }

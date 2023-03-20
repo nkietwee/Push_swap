@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:57:08 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/15 16:34:01 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/19 23:06:48 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_check_maxmin(long *res)
 	i =	0;
 	while(res[i])
 	{
-		// printf("Hello World\n");
 		if (res[i] > 2147483647 || res[i] < -2147483648)
 		{
 			ft_putstr_fd("Error : max min" , 2);

@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/16 21:10:35 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/20 20:56:34 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void ft_printstack_1(t_list *stack)
 {
 	while (stack)
 	{
+		// printf("value : %ld | index : %ld\n" , *((long *)((stack)->number)) , ((long)((stack)->index)) );
 		printf("value %ld\n" , *((long *)(stack)->number));
 		// printf("     index %ld\n" , ((long)(stack)->index));
 		(stack) = (stack)->next;
@@ -68,7 +69,19 @@ void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b)
 		ft_printstack_2(stack_b);
 
 }
-
+// void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b)
+// {
+// 	printf("entry\n");
+// 	while (1)
+// 	while (stack_a && stack_b)
+// 	{
+// 		printf("hello\n");
+// 		printf("%ld\t%ld\n" , (*((long *)(stack_a->number))) ,  (*((long *)(stack_b->number)) ));
+// 		stack_a = stack_a->next;
+// 		stack_b = stack_b->next;
+// 	}
+// 	printf("stack_a\tstack_b");
+// }
 // void ft_createstack(int *res, t_list **stack, int len) // why use double pointer of stack
 // {
 // 	t_list *tmp;
