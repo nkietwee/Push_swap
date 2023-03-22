@@ -6,17 +6,17 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 19:04:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/13 15:17:06 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:26:00 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int	i;
 	long	symbol;
-	long	result;
+	long	long result;
 
 	i = 0;
 	symbol = 1;
@@ -34,10 +34,11 @@ long	ft_atoi(const char *str)
 	{
 		result = result * 10 +(str[i] - '0');
 		i++;
-		// if ((result > 2147483647 && symbol == 1) || (result > 2147483648 && symbol == -1))
-		// {
-		// 	return(0);
-		// }
+		if ((result > 2147483647 && symbol == 1) || (result > 2147483648 && symbol == -1))
+		{
+			ft_putstr_fd("Error\n" , 2);
+			exit(0);
+		}
 	}
 	return (result * symbol);
 }

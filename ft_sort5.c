@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/19 18:48:31 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:58:46 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 	ft_ascend(&tmp_a, len);
 
 	// ft_printstack_2(&tmp_a);
+	// printf("len : %d\n", len);
 	// exit(0);
 	while (count >= 3)
 	{
@@ -76,29 +77,63 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		top = 1;
 		while (tmp_a && top <= len)
 		{
-			if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top == 1 || top == 2))
+			if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top == 1))
 			{
-					ft_pb(stack_a, &stack_b);
+				ft_pb(stack_a, &stack_b);
 				tmp_a = (*stack_a);
-				top++;
+				top = 1;
 				count--;
+				// tmp_a = (*stack_a);
+				// tmp_b = stack_b;
+				// ft_printstack_a_b_1(tmp_a, tmp_b);
+				// exit(0);
 			}
-			else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top == 3 ||top == 4 || top == 5 ))
+			else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top > len / 2 )) // top == 3 || top == 4 || top == 5
 			{
 				round = top - 1;
-				if (round < len)
+				while (round < len)
 				{
 					tmp_a = (*stack_a);
 					ft_rra(stack_a);
 					round++;
 				}
-				top++;
+				top =  1; // for pb
 			}
+			else if (( ((int)(tmp_a)->index ) >= len / 2 ) && (top <= len / 2 )) // top == 2
+			{
+				// ft_ra(stack_a);
+				// top++;
+
+				round = 0;
+				while (round < top)
+				{
+					tmp_a = (*stack_a);
+					ft_ra(stack_a);
+					round++;
+				}
+				tmp_a = (*stack_a);  // why It should have
+				top =  1; // for pb
+				// ft_printstack_a_b_1(tmp_a, tmp_b);
+				// printf("-------------end----------------\n");
+				// exit(0);
+			}
+			// else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top <= len / 2 )) // top == 2
+			// {
+			// 	ft_sa(stack_a);
+			// 	top = 1;
+			// }
 			else
 			{
 				top++;
 				tmp_a = tmp_a->next;
 			}
+			if (count == 3)
+				break;
+			// ft_printstack_a_b_1(*stack_a, stack_b);
+			// printf("top : %d\n", top);
+			// // ft_printstack_a_b_1(tmp_a, tmp_b);
+			// printf("-------------end----------------\n");
+
 		}
 		// (*stack_a) = tmp_a;
 		// stack_b = tmp_b;
@@ -110,6 +145,9 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		}
 
 	}
+	// ft_printstack_a_b_1((*stack_a), stack_b);
+	// exit(0);
+
 	while (count > 1)
 	{
 		if ( ((int)(tmp_b)->index )  < ((int)(tmp_b)->next->index ))
@@ -122,7 +160,7 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		/*Why It should in while loop*/
 		ft_pa(stack_a, &stack_b);
 		ft_pa(stack_a, &stack_b);
-		ft_printstack_a_b_1(*stack_a, stack_b);
+		// ft_printstack_a_b_1(*stack_a, stack_b);
 		exit(0);
 		// printf("stack_a\n");
 		// 	ft_printstack_2(&tmp_a);
@@ -132,8 +170,8 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 	}
 	// ft_pa(stack_a, &stack_b);
 	// ft_pa(stack_a, &stack_b);
-	ft_printstack_a_b_1(*stack_a, stack_b);
-	exit(0);
+	// ft_printstack_a_b_1(*stack_a, stack_b);
+	// exit(0);
 }
 // void sort_5(t_list **stack_a, int len)
 // {

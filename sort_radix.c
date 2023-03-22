@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:15:46 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/20 23:21:38 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:49:54 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 		}
 		i++;
 	}
-	printf("exit\n");
-	ft_printstack_a_b_1(tmp_a , tmp_b);
+	// printf("exit\n");
+	// ft_printstack_a_b_1(tmp_a , tmp_b);
 	exit(0);
 	// tmp_a = *stack_a;
 	// tmp_b = stack_b;

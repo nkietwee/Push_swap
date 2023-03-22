@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:19:51 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/16 11:47:02 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/22 19:27:39 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void sort_3(t_list **stack)
 	// printf("top : %ld\n" ,top);
 	// printf("mid : %ld\n" ,mid);
 	// printf("bot : %ld\n" ,bot);
+	// exit(0);
 	if (top > mid && mid < bot && top < bot)
 		ft_sa(stack);
 	else if (top > mid && mid > bot && top > bot)

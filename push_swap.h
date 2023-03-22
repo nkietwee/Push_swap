@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/20 23:22:18 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:24:44 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,27 @@ typedef struct s_list
 
 //check err
 int	ft_checknum(char **str, int argc);
-int		ft_check_arg(int argc, char **argv);
-int	ft_check_ascending(long *res);
-int		ft_check_repeat(long *res);
-int		ft_check_maxmin(long *res);
+// int		ft_check_arg(int argc, char **argv);
+void		ft_check_arg(int argc, char **argv);
+// int	ft_check_ascending(long *res);
+// int		ft_check_repeat(long *res);
+// int		ft_check_maxmin(long *res);
+int	ft_check_ascending(long long *res, int len);
+int		ft_check_repeat(long long *res);
+int		ft_check_maxmin(long long *res);
 
 int		ft_count_len(int argc, char **argv);
 int		ft_countdigit(int argc, char **argv);
 int		ft_foundsym(char **str, int argc, char c);
-void	ft_addnum(int argc, char **argv, long *res);
+void	ft_addnum(int argc, char **argv, long long *res);
+// void	ft_addnum(int argc, char **argv, long *res);
 
 void ft_printstack_1(t_list *stack);
 void ft_printstack_2(t_list **stack);
 void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
-void ft_createstack(long *res, t_list **stack, int len);
+// void ft_createstack(long *res, t_list **stack, int len);
+void ft_createstack(long long *res, t_list **stack, int len);
 // void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 
 //instruction

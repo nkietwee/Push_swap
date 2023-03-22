@@ -6,13 +6,13 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/20 20:56:34 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/22 19:25:43 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_createstack(long *res, t_list **stack, int len) // why use double pointer of stack
+void ft_createstack(long long *res, t_list **stack, int len) // why use double pointer of stack
 {
 	t_list *tmp;
 	int	i;
@@ -21,7 +21,8 @@ void ft_createstack(long *res, t_list **stack, int len) // why use double pointe
 	i = 1;
 	(*stack) = ft_lstnew(&res[0]);
 	// printf("createstack\n");
-	while (res[i])
+	// while (res[i])
+	while (i < len)
 	{
 		tmp = ft_lstnew(&res[i]);
 		ft_lstadd_back(stack, tmp);
@@ -34,7 +35,7 @@ void ft_printstack_1(t_list *stack)
 {
 	while (stack)
 	{
-		// printf("value : %ld | index : %ld\n" , *((long *)((stack)->number)) , ((long)((stack)->index)) );
+		// printf("value : %lld | index : %d\n" , *((long long *)((stack)->number)) , ((int)((stack)->index)) );
 		printf("value %ld\n" , *((long *)(stack)->number));
 		// printf("     index %ld\n" , ((long)(stack)->index));
 		(stack) = (stack)->next;
