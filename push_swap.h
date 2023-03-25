@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 17:24:44 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 21:56:22 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 #include"libft/libft.h"
+#include"actions/actions.h"
 
 #include<unistd.h>
 #include<stdlib.h>
@@ -35,8 +36,8 @@ void		ft_check_arg(int argc, char **argv);
 // int		ft_check_repeat(long *res);
 // int		ft_check_maxmin(long *res);
 int	ft_check_ascending(long long *res, int len);
-int		ft_check_repeat(long long *res);
-int		ft_check_maxmin(long long *res);
+int		ft_check_repeat(long long *res, int len);
+int		ft_check_maxmin(long long *res , int len);
 
 int		ft_count_len(int argc, char **argv);
 int		ft_countdigit(int argc, char **argv);
@@ -52,23 +53,24 @@ void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
 void ft_createstack(long long *res, t_list **stack, int len);
 // void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 
-//instruction
-void	ft_ra(t_list **stack);
-void	ft_rb(t_list **stack);
-void	ft_rr(t_list **stack_a, t_list **stack_b);
+// //instruction
+// void	ft_ra(t_list **stack);
+// void	ft_rb(t_list **stack);
+// void	ft_rr(t_list **stack_a, t_list **stack_b);
 
-void	ft_rra(t_list **stack);
-void	ft_rrb(t_list **stack);
-void	ft_rrr(t_list **stack_a, t_list **stack_b);
+// void	ft_rra(t_list **stack);
+// void	ft_rrb(t_list **stack);
+// void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
-void	ft_sa(t_list **stack);
-void	ft_sb(t_list **stack);
-void	ft_ss(t_list **stack_a, t_list **stack_b);
-void	ft_pa(t_list **stack_a, t_list **stack_b);
-void	ft_pb(t_list **stack_a, t_list **stack_b);
+// void	ft_sa(t_list **stack);
+// void	ft_sb(t_list **stack);
+// void	ft_ss(t_list **stack_a, t_list **stack_b);
+// void	ft_pa(t_list **stack_a, t_list **stack_b);
+// void	ft_pb(t_list **stack_a, t_list **stack_b);
 
 //sort
-void	ft_sortnumber(t_list **stack, int len);
+void	ft_sortnumber(t_list **stack_a, t_list *stack_b, int len);
+// void	ft_sortnumber(t_list **stack_a, int len);
 
 void	sort_3(t_list **stack);
 
@@ -83,13 +85,17 @@ void	ft_ascending(t_list *stack);
 void	ft_addindex(t_list *stack);
 
 
+// void	ft_dbfree(int **res, int len);
+void ft_freestack(t_list **stack);
+void ft_dbfree(char **argv);
+
 // void ft_testascend(t_list  **stack, int len);
 // void	ft_setzero(t_list **stack);
 
 //linklist
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void    ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
+// t_list	*ft_lstnew(void *content);
+// void	ft_lstadd_back(t_list **lst, t_list *new);
+// void    ft_lstadd_front(t_list **lst, t_list *new);
+// t_list	*ft_lstlast(t_list *lst);
 #endif
 

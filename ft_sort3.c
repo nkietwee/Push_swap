@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 23:19:51 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 19:27:39 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 22:08:12 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,9 @@ void sort_3(t_list **stack)
 	}
 	else if (top < mid && top > bot && mid > bot)
 		ft_rra(stack);
-	// else if (top < mid && top < bot && mid < bot) // ascending number for sort 5
-		//
-
-
+	// free(stack);
+	// ft_lstclear(stack, );
+	// exit(0);
 	// long top2;
 	// long mid2;
 	// long bot2;
@@ -60,6 +59,5 @@ void sort_3(t_list **stack)
 
 
 
-	// printf("first:%ld\n" ,*((long *)(*stack_a)->number));
 
 }

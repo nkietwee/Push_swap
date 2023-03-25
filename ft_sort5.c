@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 16:58:46 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 22:08:32 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void ft_ascend(t_list  **stack, int len)
 		len--;
 	}
 }
-// 2 3 -4 0 -1
 void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 {
 	int	count;
@@ -66,10 +65,6 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 	tmp_a = (*stack_a);
 	tmp_b = stack_b;
 	ft_ascend(&tmp_a, len);
-
-	// ft_printstack_2(&tmp_a);
-	// printf("len : %d\n", len);
-	// exit(0);
 	while (count >= 3)
 	{
 		tmp_a = (*stack_a);
@@ -101,9 +96,6 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 			}
 			else if (( ((int)(tmp_a)->index ) >= len / 2 ) && (top <= len / 2 )) // top == 2
 			{
-				// ft_ra(stack_a);
-				// top++;
-
 				round = 0;
 				while (round < top)
 				{
@@ -113,9 +105,6 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 				}
 				tmp_a = (*stack_a);  // why It should have
 				top =  1; // for pb
-				// ft_printstack_a_b_1(tmp_a, tmp_b);
-				// printf("-------------end----------------\n");
-				// exit(0);
 			}
 			// else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top <= len / 2 )) // top == 2
 			// {
@@ -129,10 +118,6 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 			}
 			if (count == 3)
 				break;
-			// ft_printstack_a_b_1(*stack_a, stack_b);
-			// printf("top : %d\n", top);
-			// // ft_printstack_a_b_1(tmp_a, tmp_b);
-			// printf("-------------end----------------\n");
 
 		}
 		// (*stack_a) = tmp_a;
@@ -145,9 +130,6 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		}
 
 	}
-	// ft_printstack_a_b_1((*stack_a), stack_b);
-	// exit(0);
-
 	while (count > 1)
 	{
 		if ( ((int)(tmp_b)->index )  < ((int)(tmp_b)->next->index ))
@@ -155,160 +137,22 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		// ft_printstack_a_b_1((*stack_a), stack_b);
 		// exit(0);
 		count--;
-
+	// printf("count : %d\n" ,count);
+	// exit(0);
 		sort_3(stack_a);
+		// printf("hello world\n");
 		/*Why It should in while loop*/
 		ft_pa(stack_a, &stack_b);
 		ft_pa(stack_a, &stack_b);
 		// ft_printstack_a_b_1(*stack_a, stack_b);
-		exit(0);
-		// printf("stack_a\n");
+		// exit(0);
 		// 	ft_printstack_2(&tmp_a);
 		// printf("stack_b\n");
 		// 	ft_printstack_2(&tmp_b);
-		// exit(0);
+		exit(0);
 	}
 	// ft_pa(stack_a, &stack_b);
 	// ft_pa(stack_a, &stack_b);
 	// ft_printstack_a_b_1(*stack_a, stack_b);
 	// exit(0);
-}
-// void sort_5(t_list **stack_a, int len)
-// {
-// 	int	count;
-// 	int	top;
-// 	int	bot;
-// 	t_list *tmp_a;
-// 	t_list *tmp_b;
-// 	t_list *stack_b=NULL;
-
-// 	count = len;
-// 	top = 1;
-// 	bot = len;
-// 	tmp_a = (*stack_a);
-// 	tmp_b = stack_b;
-// 	ft_ascend(&tmp_a, len);
-
-// 	// ft_printstack_2(&tmp_a);
-// 	// exit(0);
-// 	// printf("bot : %d\n" , bot);
-// 	while (count >= 3)
-// 	{
-// 		tmp_a = (*stack_a);
-// 		tmp_b = stack_b;
-// 		while (tmp_a)
-// 		{
-
-// 			if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top == 1 || top == 2))
-// 			{
-// 				// ft_pb(&tmp_a, &tmp_b);
-// 				ft_pb(stack_a, &stack_b);
-// 				ft_printstack_a_b_1(*stack_a, stack_b);
-// 				printf("index : %d\n" ,(int)(tmp_a)->index );
-// 				// tmp_a = tmp_a->next;
-// 				tmp_a = (*stack_a);
-// 				// exit(0);
-// 				top++;
-// 				count--;
-// 			}
-// 			else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (bot == 4 || bot == 5 ))
-// 			{
-// 				// ft_rra(stacj_a);
-// 				ft_rra(stack_a);
-// 				bot--;
-// 			}
-// 			else
-// 			{
-// 				printf("-----------------------move stack\n");
-// 				tmp_a = tmp_a->next;
-// 			}
-// 			// if (count == 3 || tmp_a == NULL)
-// 			if (count == 3)
-// 			{
-// 				// printf("inner count = 3\n");
-// 				// tmp_a = (*stack_a);
-// 				// sort_3(&tmp_a); // seg fault
-// 				// ft_printstack_a_b_1(tmp_a, tmp_b);
-// 				break;
-// 			}
-// 			// ft_printstack_a_b_1((*stack_a), stack_b);
-// 			// ft_printstack_a_b_1(tmp_a, tmp_b);
-// 			printf("---------------------------------------------------\n");
-// 			printf("top : %d\n" ,top);
-// 			printf("bot : %d\n" ,bot);
-// 			printf("count : %d\n" ,count);
-// 			printf("---------------------------------------------------\n");
-// 		}
-// 		// (*stack_a) = tmp_a;
-// 		// stack_b = tmp_b;
-// 		if (count == 3)
-// 		{
-// 			printf("count = 3\n");
-// 			break;
-// 		}
-// 	}
-// 	printf("count after break : %d\n" , count);
-// 			ft_printstack_a_b_1(tmp_a, tmp_b);
-// 	exit(0);
-// 	while (count > 1)
-// 	{
-// 		if (  *((long *)tmp_b->number)  <  *((long *)tmp_b->next->number))
-// 			ft_sb(&tmp_b);
-// 		// exit(0);
-// 		count--;
-// 		// sort_3(tmp_a);
-// 		// printf("stack_a\n");
-// 		// 	ft_printstack_2(&tmp_a);
-// 		// printf("stack_b\n");
-// 		// 	ft_printstack_2(&tmp_b);
-// 		// exit(0);
-// 	}
-// 	ft_pa(stack_a, &tmp_b);
-// 	ft_pa(stack_a, &tmp_b);
-
-
-// 	printf("stack_a\n");
-// 			ft_printstack_2(&tmp_a);
-// 	printf("stack_b\n");
-// 			ft_printstack_2(&tmp_b);
-// 	exit(0);
-// }
-void test_sort6(t_list **stack_a, int len)
-{
-	t_list *tmp_a;
-	t_list *tmp_b;
-	t_list *stack_b=NULL;
-	int	top;
-	int	i;
-
-	tmp_a = (*stack_a);
-	tmp_b = stack_b;
-	top = 1;
-	i = len;
-	// ft_printstack_1(tmp_a);
-	// exit(0);
-	while (i > 3)
-	{
-		// printf("---test rra---\n");
-		ft_pb(&tmp_a , &tmp_b);
-		ft_pb(&tmp_a , &tmp_b);
-		ft_pb(&tmp_a , &tmp_b);
-		ft_pb(&tmp_a , &tmp_b);
-		ft_ss(&tmp_a , &tmp_b);
-		// ft_rrb(&tmp_b);
-		// ft_rrr(&tmp_a ,&tmp_b);
-		printf("---stack a---\n");
-		ft_printstack_1(tmp_a);
-		printf("---stack b---\n");
-		ft_printstack_1(tmp_b);
-		exit(0);
-		if (( ((int)tmp_a->index ) <= len / 2 ) && (top == 1 || top == 2 ))
-		{
-			ft_sa(&tmp_a);
-			ft_printstack_1(tmp_a);
-			exit(0);
-		}
-			// ft_rra(tmp_a, tmp_b);
-
-	}
 }

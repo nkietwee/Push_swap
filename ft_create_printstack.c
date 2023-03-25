@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:25:13 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 19:25:43 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 21:50:42 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,15 @@ void ft_createstack(long long *res, t_list **stack, int len) // why use double p
 		ft_lstadd_back(stack, tmp);
 		i++;
 	}
-	// ft_printstack_1(*stack);
+	free(res);
 }
 
 void ft_printstack_1(t_list *stack)
 {
 	while (stack)
 	{
-		// printf("value : %lld | index : %d\n" , *((long long *)((stack)->number)) , ((int)((stack)->index)) );
-		printf("value %ld\n" , *((long *)(stack)->number));
+		printf("value : %lld | index : %d\n" , *((long long *)((stack)->number)) , ((int)((stack)->index)) );
+		// printf("value %ld\n" , *((long *)(stack)->number));
 		// printf("     index %ld\n" , ((long)(stack)->index));
 		(stack) = (stack)->next;
 	}

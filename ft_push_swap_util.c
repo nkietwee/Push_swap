@@ -6,23 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:32:20 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/11 20:54:09 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 23:56:54 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// #include<unistd.h>
-// #include<stdlib.h>
-// #include<stdio.h>
-
 #include "push_swap.h"
-
-// typedef struct s_list
-// {
-// 	int		number;
-// 	int 	index;
-// 	struct s_list	*next;
-// }t_list;
 
 void ft_addindex(t_list *stack)
 {
@@ -51,7 +39,6 @@ void	ft_ascending(t_list *stack)
 	i = 1;
 	while (tmp1 && tmp2)
 	{
-		// printf("Hello world\n");
 		if (tmp1->number > tmp2->number)
 		{
 			temporary = tmp1->number;
@@ -68,6 +55,37 @@ void	ft_ascending(t_list *stack)
 			tmp2 = tmp1->next;
 		}
 	}
+}
+
+void ft_freestack(t_list **stack)
+{
+	t_list *tmp;
+
+	tmp = (*stack);
+
+	while((*stack))
+	{
+		tmp = (*stack);
+		(*stack) = (*stack)->next;
+		free(tmp->number);
+		// free (*((int *)tmp->index));
+		//
+	}
+	free(stack);
+}
+
+void ft_dbfree(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while(argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
+
 }
 
 // int	main()

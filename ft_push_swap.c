@@ -6,27 +6,25 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 12:29:36 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 19:26:12 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 22:11:47 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// long *ft_addnum(int argc, char **argv, long *res)
 void ft_addnum(int argc, char **argv, long long *res)
 {
 	int i;
 	int j;
 	int k;
-	char **nbr;
-	// long *res;
+	char **nbr=NULL;
 
 	i = 1;
 	j = 0;
 	k = 0;
-	// res = (long *)malloc(sizeof(long) * 20);
-	// if (!res)
-	// 	return (0);
+	if (!res)
+		exit(0);
+		// return (0);
 	/* argc >= 2*/
 	if ((ft_checknum(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
 	{
@@ -34,6 +32,8 @@ void ft_addnum(int argc, char **argv, long long *res)
 		{
 			j = 0;
 			nbr = ft_split(argv[i], ' ');
+			if (!nbr)
+				return ; // or exit
 			while (nbr[j] != NULL)
 			{
 				res[k] = ft_atoi(nbr[j]);
@@ -41,15 +41,11 @@ void ft_addnum(int argc, char **argv, long long *res)
 				j++;
 				k++;
 			}
+			ft_dbfree(nbr);
 			i++;
 		}
 		// exit(0);
 	}
-	// k = 0;
-	// while(k < 5)
-	// 	printf("res[ ] : %llu\n" , res[k++]);
-	// exit(0);
-	// res[k] = (long long)NULL;
 }
 
 int ft_count_len(int argc, char **argv)
@@ -57,37 +53,45 @@ int ft_count_len(int argc, char **argv)
 	int len;
 	int i;
 	int j;
-	char **nbr;
+	char **nbr=NULL;
 
 	len = 0;
 	i = 1;
-	// printf("Hello\n");
+	// if (ft_foundsym(argv, argc, '-') == 1)
+	// 	printf("entry\n");
+	// exit(0);
+
 	if ((ft_checknum(argv, argc) == 1) && (ft_foundsym(argv, argc, '-') == 1) && (ft_foundsym(argv, argc, '+') == 1))
 	{
 		while (argv[i])
 		{
-		// printf("argv : %s\n" ,argv[1]);
-		// exit(0);
-			// printf("%s\n", argv[1]);
-			// exit(0);
 			j = 0;
 			nbr = ft_split(argv[i], ' ');
+			if(!nbr)
+				return(0); // exit
 			while (nbr[j])
 			{
-				// ans[len] = nbr[j];
-				// printf("nbr : %s\n" , nbr[0]);
-				// exit(0);
 				len++;
 				j++;
 			}
+			// if(nbr)
+			ft_dbfree(nbr);
 			i++;
 		}
 	}
 	else
+	{
+		// printf("entry\n");
+		// exit(0);
+		// ft_dbfree(argv);
 		// ft_putstr_fd("Error aaaja" ,2);
 		ft_putstr_fd("Error\n" ,2);
 	// if (len < 1)
 	// 	exit(0);
+	}
+	// printf("entry\n");
+	// exit(0);
+
 	return (len);
 }
 
@@ -95,29 +99,32 @@ int main(int argc, char **argv)
 {
 	long long	*res;
 	int		len;
-	t_list	*stack=NULL;
+	t_list	*stack_a=NULL;
+	t_list	*stack_b=NULL;
 
 	ft_check_arg(argc, argv);
 	len = ft_count_len(argc, argv);
-	// printf("%d\n" , len);
+	// printf("found\n");
 	// exit(0);
 	res = (long long *)malloc(sizeof(long long) * (len));
 	if (!res)
 		return (0);
 	ft_addnum(argc, argv ,res);
-	ft_check_repeat(res);
+	ft_check_repeat(res, len);
 	ft_check_ascending(res , len);
-	ft_check_maxmin(res);
-	// int k = 0;
-	// while(k < 3)
-	// 	printf("res[ ] : %llu\n" , res[k++]);
+	// int i = 0;
+	// while(i < len)
+	// 	printf("%lld\n" , res[i++]);
+	// printf("end\n");
 	// exit(0);
-	ft_createstack(res, &stack, len); //protect null?
-	// if (len == 5)
-	// printf("Hello World\n");
-	// ft_printstack_1(stack); // why I can't print zero
+	// ft_check_maxmin(res , len);
 	// exit(0);
-	ft_sortnumber(&stack, len);
-
+	ft_createstack(res, &stack_a, len); //protect null?
+	// ft_printstack_1(stack_a);
+	// exit(0);
+	ft_sortnumber(&stack_a, stack_b, len);
+	// ft_sortnumber(&stack_a, len);
+	ft_freestack(&stack_a);
+	ft_freestack(&stack_b);
 	return (0);
 }

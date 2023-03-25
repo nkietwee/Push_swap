@@ -6,17 +6,18 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:15:46 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/21 13:49:54 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/25 22:20:05 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+/*  ft_countbase2 count number of digit for base2(because I use bitwise operator) */
 int	ft_countbase2(int len)
 {
 	int count;
 
-	count = 1;
-	while (len > 1)
+	count = 0;
+	while (len > 0)
 	{
 		count++;
 		len = len / 2;
@@ -34,6 +35,9 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 	i = 0;
 	count_pb = 0;
 	countall = ft_countbase2(len);
+	// printf("%d\n", countall);
+	// exit(0);
+	// because len is max value so I find base 2 of len , It mean max.
 	ft_ascend(stack_a, len); // for set index
 	// ft_printstack_a_b_2(stack_a , &stack_b);
 	// exit(0);
@@ -44,7 +48,7 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 	{
 		int x = 0;
 		count_pb = 0;
-		while(x++ < len)
+		while(x < len)
 		{
 			if ( (((int)((tmp_a)->index))>>i & 1) == 0)
 			{
@@ -55,6 +59,7 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 			{
 				ft_ra(&tmp_a);
 			}
+			x++;
 		}
 		start = 0;
 		while (start < count_pb)
@@ -64,7 +69,6 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 		}
 		i++;
 	}
-	// printf("exit\n");
 	// ft_printstack_a_b_1(tmp_a , tmp_b);
 	exit(0);
 	// tmp_a = *stack_a;
@@ -74,21 +78,5 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 // int main(void)
 // {
 // 	printf("%d\n" , ft_countbase2(4));
-
-
-// }
-// int	main(void)
-// {
-	// int	i = 32;
-	// printf("%d\n" , (i >> 1));
-// 	int i = 2;
-// 	printf("%d\n" , (i >> 1));
-// 	printf("%d\n" , (i >> 1) & 1);
-// 	printf("%d\n" , (i >> 1) & 0);
-// 	i = 4;
-// 	printf("--------\n");
-// 	printf("%d\n" , (i >> 2));
-// 	printf("%d\n" , (i >> 2) & 1);
-// 	printf("%d\n" , (i >> 2) & 0);
 // }
 
