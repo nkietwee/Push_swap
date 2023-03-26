@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:15:46 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/25 22:20:05 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:09:26 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,16 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 	i = 0;
 	count_pb = 0;
 	countall = ft_countbase2(len);
-	// printf("%d\n", countall);
+	// printf("countall : %d\n" ,countall);
+	// printf("len : %d\n" ,len);
 	// exit(0);
-	// because len is max value so I find base 2 of len , It mean max.
 	ft_ascend(stack_a, len); // for set index
 	// ft_printstack_a_b_2(stack_a , &stack_b);
 	// exit(0);
 	t_list *tmp_a = *stack_a;
 	t_list *tmp_b = stack_b;
 
+	// while(((int)((tmp_a)->index))>>i > 0)
 	while(i < countall)
 	{
 		int x = 0;
@@ -69,14 +70,9 @@ void ft_sortradix(t_list **stack_a, t_list *stack_b,int len)
 		}
 		i++;
 	}
-	// ft_printstack_a_b_1(tmp_a , tmp_b);
-	exit(0);
 	// tmp_a = *stack_a;
 	// tmp_b = stack_b;
+	// ft_printstack_a_b_1(tmp_a , tmp_b);
+	exit(0);
 }
-
-// int main(void)
-// {
-// 	printf("%d\n" , ft_countbase2(4));
-// }
 

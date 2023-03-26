@@ -6,56 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:32:20 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/25 23:56:54 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:45:58 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void ft_addindex(t_list *stack)
-{
-	t_list *tmp;
-	int	i;
-
-	tmp = stack;
-	i = 1;
-	while (tmp)
-	{
-		tmp->index = i;
-		tmp = tmp->next;
-		i++;
-	}
-}
-
-void	ft_ascending(t_list *stack)
-{
-	t_list *tmp1;
-	t_list *tmp2;
-	long *temporary;
-	int	i;
-
-	tmp1 = stack;
-	tmp2 = stack->next;
-	i = 1;
-	while (tmp1 && tmp2)
-	{
-		if (tmp1->number > tmp2->number)
-		{
-			temporary = tmp1->number;
-			tmp1->number = tmp2->number;
-			tmp2->number = temporary;
-
-			tmp1 = stack;
-			tmp2 = tmp1->next;
-
-		}
-		else
-		{
-			tmp1 = tmp1->next;
-			tmp2 = tmp1->next;
-		}
-	}
-}
 
 void ft_freestack(t_list **stack)
 {
@@ -67,11 +22,12 @@ void ft_freestack(t_list **stack)
 	{
 		tmp = (*stack);
 		(*stack) = (*stack)->next;
-		free(tmp->number);
+		// free(tmp->number);
+		free(tmp);
 		// free (*((int *)tmp->index));
 		//
 	}
-	free(stack);
+	// free(stack);
 }
 
 void ft_dbfree(char **argv)
@@ -87,6 +43,54 @@ void ft_dbfree(char **argv)
 	free(argv);
 
 }
+// void ft_addindex(t_list *stack)
+// {
+// 	t_list *tmp;
+// 	int	i;
+
+// 	tmp = stack;
+// 	i = 1;
+// 	while (tmp)
+// 	{
+// 		tmp->index = i;
+// 		tmp = tmp->next;
+// 		i++;
+// 	}
+// }
+
+// void	ft_ascending(t_list *stack)
+// {
+// 	t_list *tmp1;
+// 	t_list *tmp2;
+// 	long *temporary;
+// 	int	i;
+
+// 	tmp1 = stack;
+// 	tmp2 = stack->next;
+// 	i = 1;
+// 	while (tmp1 && tmp2)
+// 	{
+// 		if (tmp1->number > tmp2->number)
+// 		{
+// 			temporary = tmp1->number;
+// 			tmp1->number = tmp2->number;
+// 			tmp2->number = temporary;
+
+// 			tmp1 = stack;
+// 			tmp2 = tmp1->next;
+
+// 		}
+// 		else
+// 		{
+// 			tmp1 = tmp1->next;
+// 			tmp2 = tmp1->next;
+// 		}
+// 	}
+// }
+// void ft_free()
+// {
+// 	free();
+// }
 
 // int	main()
 // {

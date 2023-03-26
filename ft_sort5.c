@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/25 22:08:32 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:59:40 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,19 @@ void ft_ascend(t_list  **stack, int len)
 {
 	t_list *tmp;
 	t_list *max;
-	long num_tmp;
+	long long num_tmp;
 
 	if(!stack)
 		return;
+	// printf("hello\n");
+	// ft_printstack_2(stack);
+	// printf("end\n");
+	// exit(0);
 	ft_setzero(stack);
 	while (len > 0 )
 	{
 		num_tmp = -2147483648;
+		// num_tmp = -9223372036854775808;
 		tmp = (*stack);
 		while (tmp)
 		{
@@ -130,29 +135,10 @@ void sort_5(t_list **stack_a,t_list *stack_b,  int len)
 		}
 
 	}
-	while (count > 1)
-	{
-		if ( ((int)(tmp_b)->index )  < ((int)(tmp_b)->next->index ))
-			ft_sb(&stack_b);
-		// ft_printstack_a_b_1((*stack_a), stack_b);
-		// exit(0);
-		count--;
-	// printf("count : %d\n" ,count);
-	// exit(0);
-		sort_3(stack_a);
-		// printf("hello world\n");
-		/*Why It should in while loop*/
-		ft_pa(stack_a, &stack_b);
-		ft_pa(stack_a, &stack_b);
-		// ft_printstack_a_b_1(*stack_a, stack_b);
-		// exit(0);
-		// 	ft_printstack_2(&tmp_a);
-		// printf("stack_b\n");
-		// 	ft_printstack_2(&tmp_b);
-		exit(0);
-	}
-	// ft_pa(stack_a, &stack_b);
-	// ft_pa(stack_a, &stack_b);
-	// ft_printstack_a_b_1(*stack_a, stack_b);
-	// exit(0);
+	if ( ((int)(tmp_b)->index )  < ((int)(tmp_b)->next->index ))
+		ft_sb(&stack_b);
+	sort_3(stack_a);
+	/*Why It should in while loop*/
+	ft_pa(stack_a, &stack_b);
+	ft_pa(stack_a, &stack_b);
 }

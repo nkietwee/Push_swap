@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/25 21:56:22 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/26 17:41:39 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void ft_printstack_2(t_list **stack);
 void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
 // void ft_createstack(long *res, t_list **stack, int len);
-void ft_createstack(long long *res, t_list **stack, int len);
+// void ft_createstack(long long *res, t_list **stack, int len);
+t_list *ft_createstack(long long *res, int len) ;// why use double pointer of stack
 // void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
 
 // //instruction
@@ -78,6 +79,7 @@ void	test_sort6(t_list **stack_a, int len);
 void	sort_5(t_list **stack_a,t_list *stack_b,  int len);
 void	ft_ascend(t_list  **stack, int len);
 void	ft_setzero(t_list **stack);
+// void	ft_sortradix(t_list **stack_a, t_list *stack_b,int len);
 void	ft_sortradix(t_list **stack_a, t_list *stack_b,int len);
 int		ft_countbase2(int len);
 
