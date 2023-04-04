@@ -6,139 +6,72 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/26 17:59:40 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/29 12:31:04 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	ft_setzero(t_list **stack)
+void	ft_in_to_stk_b(t_list **stack_a, t_list **stack_b, int len, int *count)
 {
-	t_list *tmp;
-	int	i;
+	t_list	*tmp_a;
+	int		top;
 
-	tmp = (*stack);
-	i = 0;
-	while(tmp)
-	{
-		(tmp) ->index = i;
-		tmp = tmp->next;
-	}
-}
-
-void ft_ascend(t_list  **stack, int len)
-{
-	t_list *tmp;
-	t_list *max;
-	long long num_tmp;
-
-	if(!stack)
-		return;
-	// printf("hello\n");
-	// ft_printstack_2(stack);
-	// printf("end\n");
-	// exit(0);
-	ft_setzero(stack);
-	while (len > 0 )
-	{
-		num_tmp = -2147483648;
-		// num_tmp = -9223372036854775808;
-		tmp = (*stack);
-		while (tmp)
-		{
-			if (( *((long *)tmp->number) > num_tmp) && ( ((int)tmp->index) < len))
-			{
-				max = tmp;
-				num_tmp = *((long *)tmp->number);
-			}
-			tmp = tmp->next;
-		}
-		max->index = len;
-		len--;
-	}
-}
-void sort_5(t_list **stack_a,t_list *stack_b,  int len)
-{
-	int	count;
-	int	top;
-	int	round;
-	t_list *tmp_a;
-	t_list *tmp_b;
-
-	count = len;
 	top = 1;
 	tmp_a = (*stack_a);
-	tmp_b = stack_b;
-	ft_ascend(&tmp_a, len);
-	while (count >= 3)
+	if ((((int)(tmp_a)->index) <= len / 2) && (top == 1))
 	{
+		ft_push_stk_b(stack_a, stack_b, &top, count);
 		tmp_a = (*stack_a);
-		tmp_b = stack_b;
-		top = 1;
-		while (tmp_a && top <= len)
-		{
-			if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top == 1))
-			{
-				ft_pb(stack_a, &stack_b);
-				tmp_a = (*stack_a);
-				top = 1;
-				count--;
-				// tmp_a = (*stack_a);
-				// tmp_b = stack_b;
-				// ft_printstack_a_b_1(tmp_a, tmp_b);
-				// exit(0);
-			}
-			else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top > len / 2 )) // top == 3 || top == 4 || top == 5
-			{
-				round = top - 1;
-				while (round < len)
-				{
-					tmp_a = (*stack_a);
-					ft_rra(stack_a);
-					round++;
-				}
-				top =  1; // for pb
-			}
-			else if (( ((int)(tmp_a)->index ) >= len / 2 ) && (top <= len / 2 )) // top == 2
-			{
-				round = 0;
-				while (round < top)
-				{
-					tmp_a = (*stack_a);
-					ft_ra(stack_a);
-					round++;
-				}
-				tmp_a = (*stack_a);  // why It should have
-				top =  1; // for pb
-			}
-			// else if (( ((int)(tmp_a)->index ) <= len / 2 ) && (top <= len / 2 )) // top == 2
-			// {
-			// 	ft_sa(stack_a);
-			// 	top = 1;
-			// }
-			else
-			{
-				top++;
-				tmp_a = tmp_a->next;
-			}
-			if (count == 3)
-				break;
-
-		}
-		// (*stack_a) = tmp_a;
-		// stack_b = tmp_b;
-		if (count == 3)
-		{
-			tmp_a = (*stack_a);
-			tmp_b = stack_b;
-			break;
-		}
-
 	}
-	if ( ((int)(tmp_b)->index )  < ((int)(tmp_b)->next->index ))
-		ft_sb(&stack_b);
+	else if ((((int)(tmp_a)->index) <= len / 2) && (top > len / 2))
+		ft_rra_for_stacka(stack_a, &top, &len);
+	else if ((((int)tmp_a->index) >= len / 2) && (top <= len / 2))
+	{
+		ft_ra_for_stacka(stack_a, &top);
+		tmp_a = (*stack_a);
+	}
+	else
+	{
+		top++;
+		tmp_a = tmp_a->next;
+	}
+}
+
+void	ft_insidesplit(t_list **stack_a, t_list **stack_b, int len, int count)
+{
+	t_list	*tmp_a;
+	int		top;
+
+	top = 1;
+	tmp_a = (*stack_a);
+	while (tmp_a && top <= len)
+	{
+		ft_in_to_stk_b(stack_a, stack_b, len, &count);
+		if (count == 3)
+			break ;
+	}
+}
+
+void	ft_split_sort5(int len, t_list **stack_a, t_list **stack_b)
+{
+	int		count;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+
+	count = len;
+	ft_insidesplit(stack_a, stack_b, len, count);
+	tmp_a = (*stack_a);
+	tmp_b = (*stack_b);
+	if (((int)(tmp_b)->index) < ((int)(tmp_b)->next->index))
+		ft_sb(stack_b);
 	sort_3(stack_a);
-	/*Why It should in while loop*/
-	ft_pa(stack_a, &stack_b);
-	ft_pa(stack_a, &stack_b);
+	ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
+}
+
+void	sort_5(t_list **stack_a, t_list *stack_b, int len)
+{
+	ft_ascend(stack_a, len);
+	ft_split_sort5(len, stack_a, &stack_b);
 }

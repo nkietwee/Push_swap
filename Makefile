@@ -6,7 +6,7 @@
 #    By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 12:29:33 by nkietwee          #+#    #+#              #
-#    Updated: 2023/03/25 16:18:49 by nkietwee         ###   ########.fr        #
+#    Updated: 2023/03/27 18:56:29 by nkietwee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ PUSHSWAP_SRCS = ft_check_err.c\
 			ft_push_swap.c\
 			ft_sort3.c\
 			ft_sort5.c\
+			ft_sort5_utils.c\
 			sort_radix.c\
 			sortnumber.c\
 
@@ -42,6 +43,7 @@ LIBFT_SRCS = ft_atoi.c\
 			ft_strlen.c\
 			ft_lstclear.c\
 			ft_lstdelone.c\
+			ft_lstsize.c
 
 
 ACTIONS_SRCS = ft_r_actions.c\

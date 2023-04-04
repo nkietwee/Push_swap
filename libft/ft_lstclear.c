@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:35:55 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/26 17:31:50 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:31:04 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = temp;
 	}
 }
-

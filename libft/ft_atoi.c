@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 19:04:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 16:26:00 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/29 12:31:51 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long long	ft_atoi(const char *str)
 {
-	int	i;
-	long	symbol;
-	long	long result;
+	int			i;
+	long long	symbol;
+	long long	result;
 
 	i = 0;
 	symbol = 1;
@@ -30,30 +30,19 @@ long long	ft_atoi(const char *str)
 	}
 	else if (str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9' && str[i])
 	{
-		result = result * 10 +(str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
-		if ((result > 2147483647 && symbol == 1) || (result > 2147483648 && symbol == -1))
-		{
-			ft_putstr_fd("Error\n" , 2);
-			exit(0);
-		}
 	}
 	return (result * symbol);
 }
 
-// #include<stdio.h>
-// int main(int argc ,char **argv)
+// int main(void)
 // {
-// 	int	i;
-
-// 	i = 1;
-// 	while(i < argc)
-// 	{
-// 		int num = ft_atoi(argv[i]);
-// 		printf("%d\n" ,num);
-// 		i++;
-// 	}
-
+// 	char nbr[] = "-123456789";
+// 	// printf("%llu\n" , ft_atoi("-123"));
+// 	printf("before : %s\n", nbr);
+// 	printf("------------------\n");
+// 	printf("after : %lld\n", ft_atoi(nbr));
 // }

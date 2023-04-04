@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 14:25:42 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/22 17:30:42 by nkietwee         ###   ########.fr       */
+/*   Created: 2023/03/27 18:55:32 by nkietwee          #+#    #+#             */
+/*   Updated: 2023/03/27 19:13:22 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new;
+	size_t	count;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	// if (!new)
-	// 	return (NULL);
-	new -> number = content;
-	new -> next = NULL;
-	return (new); // return address
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst -> next != NULL)
+	{
+		lst = lst -> next;
+		count++;
+	}
+	count++;
+	return (count);
 }

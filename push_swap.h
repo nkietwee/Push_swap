@@ -6,98 +6,65 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:03:37 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/26 17:41:39 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:38:28 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include"libft/libft.h"
-#include"actions/actions.h"
+# include"libft/libft.h"
+# include"actions/actions.h"
+# include<unistd.h>
+# include<stdlib.h>
+# include<stdio.h>
 
-#include<unistd.h>
-#include<stdlib.h>
-#include<stdio.h>
-#include <ctype.h> // isdigit
+typedef struct checksym
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**nbr;
+}	t_sym;
+
 typedef struct s_list
 {
-	void	*number;
-	int		index;
-	// long	*number;
+	void			*number;
+	int				index;
 	struct s_list	*next;
-}t_list;
+}	t_list;
 
 //check err
-int	ft_checknum(char **str, int argc);
-// int		ft_check_arg(int argc, char **argv);
-void		ft_check_arg(int argc, char **argv);
-// int	ft_check_ascending(long *res);
-// int		ft_check_repeat(long *res);
-// int		ft_check_maxmin(long *res);
-int	ft_check_ascending(long long *res, int len);
-int		ft_check_repeat(long long *res, int len);
-int		ft_check_maxmin(long long *res , int len);
-
+int		ft_checknum(char **str, int argc);
+void	ft_check_arg(int argc, char **argv);
+int		ft_check_ascending(long long *res, int len);
+void	ft_check_repeat(long long *res, int len);
+int		ft_check_maxmin(long long *res, int len);
 int		ft_count_len(int argc, char **argv);
 int		ft_countdigit(int argc, char **argv);
 int		ft_foundsym(char **str, int argc, char c);
 void	ft_addnum(int argc, char **argv, long long *res);
-// void	ft_addnum(int argc, char **argv, long *res);
-
-void ft_printstack_1(t_list *stack);
-void ft_printstack_2(t_list **stack);
-void ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
-void ft_printstack_a_b_2(t_list **stack_a, t_list **stack_b);
-// void ft_createstack(long *res, t_list **stack, int len);
-// void ft_createstack(long long *res, t_list **stack, int len);
-t_list *ft_createstack(long long *res, int len) ;// why use double pointer of stack
-// void test_ft_printstack_a_b_1(t_list *stack_a, t_list *stack_b);
-
-// //instruction
-// void	ft_ra(t_list **stack);
-// void	ft_rb(t_list **stack);
-// void	ft_rr(t_list **stack_a, t_list **stack_b);
-
-// void	ft_rra(t_list **stack);
-// void	ft_rrb(t_list **stack);
-// void	ft_rrr(t_list **stack_a, t_list **stack_b);
-
-// void	ft_sa(t_list **stack);
-// void	ft_sb(t_list **stack);
-// void	ft_ss(t_list **stack_a, t_list **stack_b);
-// void	ft_pa(t_list **stack_a, t_list **stack_b);
-// void	ft_pb(t_list **stack_a, t_list **stack_b);
+t_list	*ft_createstack(long long *res, int len);
+void	ft_checksym(int argc, char **argv, char c);
 
 //sort
 void	ft_sortnumber(t_list **stack_a, t_list *stack_b, int len);
-// void	ft_sortnumber(t_list **stack_a, int len);
-
 void	sort_3(t_list **stack);
+void	sort_5(t_list **stack_a, t_list *stack_b, int len);
+void	ft_split_sort5(int len, t_list **stack_a, t_list **stack_b);
+void	ft_push_stk_b(t_list **stack_a, t_list **stack_b, int *top, int *count);
+void	ft_insidesplit(t_list **stack_a, t_list **stack_b, int len, int count);
+void	ft_in_tostk_b(t_list **stack_a, t_list **stack_b, int len, int *count);
+void	ft_rra_for_stacka(t_list **stack_a, int *top, int *len);
+void	ft_ra_for_stacka(t_list **stack_a, int *top);
 
-void	test_sort6(t_list **stack_a, int len);
-void	sort_5(t_list **stack_a,t_list *stack_b,  int len);
-void	ft_ascend(t_list  **stack, int len);
+void	ft_ascend(t_list **stack, int len);
 void	ft_setzero(t_list **stack);
-// void	ft_sortradix(t_list **stack_a, t_list *stack_b,int len);
-void	ft_sortradix(t_list **stack_a, t_list *stack_b,int len);
+void	ft_sortradix(t_list **stack_a, t_list **stack_b, int len);
 int		ft_countbase2(int len);
-
 void	ft_ascending(t_list *stack);
 void	ft_addindex(t_list *stack);
+void	ft_freestack(t_list **stack);
+void	ft_dbfree(char **argv);
 
-
-// void	ft_dbfree(int **res, int len);
-void ft_freestack(t_list **stack);
-void ft_dbfree(char **argv);
-
-// void ft_testascend(t_list  **stack, int len);
-// void	ft_setzero(t_list **stack);
-
-//linklist
-// t_list	*ft_lstnew(void *content);
-// void	ft_lstadd_back(t_list **lst, t_list *new);
-// void    ft_lstadd_front(t_list **lst, t_list *new);
-// t_list	*ft_lstlast(t_list *lst);
 #endif
-

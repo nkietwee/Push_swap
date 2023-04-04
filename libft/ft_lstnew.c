@@ -6,16 +6,15 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:25:42 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/26 17:00:38 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:33:07 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "push_swap.h"
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = NULL;
 	new = (t_list *)malloc(sizeof(t_list));
@@ -23,6 +22,5 @@ t_list *ft_lstnew(void *content)
 		return (NULL);
 	new->number = content;
 	new->next = NULL;
-	// free(content);
-	return (new); // return address
+	return (new);
 }

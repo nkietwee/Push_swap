@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:38:04 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/24 22:25:34 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:39:20 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_checknum(char **str, int argc)
 	int	j;
 
 	i = 1;
-	// if(!str)
-	// 	return (0);
+	if (!str)
+		return (0);
 	while (i < argc)
 	{
 		j = 0;
@@ -35,4 +35,37 @@ int	ft_checknum(char **str, int argc)
 		i++;
 	}
 	return (1);
+}
+
+//If first character is number and second is sym
+//./push_swap 1 3+2 5
+//./push_swap 1 3+2 5+
+
+void	ft_checksym(int argc, char **argv, char c)
+{
+	t_sym	check;
+
+	check.i = 1;
+	while (check.i < argc)
+	{
+		check.j = 0;
+		check.nbr = ft_split(argv[check.i], ' ');
+		while (check.nbr[check.j])
+		{
+			check.k = 0;
+			while (check.nbr[check.j][check.k])
+			{
+				if (ft_isdigit(check.nbr[check.j][check.k]) == 1
+				&& check.nbr[check.j][check.k + 1] == c)
+				{
+					ft_putstr_fd("Error\n", 2);
+					exit(0);
+				}
+				check.k++;
+			}
+			check.j++;
+		}
+		ft_dbfree(check.nbr);
+		check.i++;
+	}
 }
