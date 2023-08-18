@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:36:56 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/08/18 18:35:43 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:44:57 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/push_swap.h"
+#include "../include/push_swap.h"
 
 static size_t	ft_countword(char const *s, char c)
 {
@@ -42,7 +42,7 @@ static char	*ft_printword(char const *s, char c, size_t *start)
 	i = 0;
 	len = 0;
 	while (s[*start] == c)
-	*start += 1;
+		*start += 1;
 	while (s[*start + len] != '\0' && s[*start + len] != c)
 		len++;
 	res = (char *)malloc(sizeof(char) * (len + 1));

@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:48:00 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/08/18 18:26:57 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:41:51 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_sortnumber(t_list **stack_a, t_list *stack_b, int len)
 {

@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:08:39 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/08/18 18:27:20 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:41:15 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_sa(t_list **stack)
 {

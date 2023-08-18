@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 19:04:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/08/18 18:34:54 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:41:37 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../include/push_swap.h"
+#include "../include/push_swap.h"
 
 long long	ft_atoi(const char *str)
 {
