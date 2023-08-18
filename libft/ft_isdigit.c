@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 13:22:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/27 16:29:21 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:34:56 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"../include/push_swap.h"
 
 int	ft_isdigit(char c)
 {

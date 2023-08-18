@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:38:04 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/30 21:39:20 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:26:38 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include"../include/push_swap.h"
 
 int	ft_checknum(char **str, int argc)
 {

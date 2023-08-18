@@ -6,7 +6,7 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 11:09:29 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/27 19:15:45 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:27:33 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../push_swap.h"
+// # include "../push_swap.h"
 
 typedef struct s_list	t_list;
 //Mandatory

@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 20:29:00 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/27 16:29:28 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:35:03 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"../include/push_swap.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

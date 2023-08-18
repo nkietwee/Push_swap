@@ -6,7 +6,7 @@
 #    By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 12:29:33 by nkietwee          #+#    #+#              #
-#    Updated: 2023/03/27 18:56:29 by nkietwee         ###   ########.fr        #
+#    Updated: 2023/08/18 18:34:36 by nkietwee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,9 @@ RM = rm -f
 
 LIBFT_PATH = libft/
 ACTIONS_PATH = actions/
+SRC_PATH = src/
 
-PUSHSWAP_SRCS = ft_check_err.c\
+SRC_SRCS = ft_check_err.c\
 			ft_checknum.c\
 			ft_create_printstack.c\
 			ft_push_swap_util.c\
@@ -51,9 +52,9 @@ ACTIONS_SRCS = ft_r_actions.c\
 			ft_s_actions.c\
 			ft_p_actions.c\
 
-SRCS = $(PUSHSWAP_SRCS)\
-	   $(addprefix $(LIBFT_PATH), $(LIBFT_SRCS))\
-	   $(addprefix $(ACTIONS_PATH), $(ACTIONS_SRCS))
+SRCS =	$(addprefix $(LIBFT_PATH), $(LIBFT_SRCS))\
+		$(addprefix $(SRC_PATH), $(SRC_SRCS))\
+		$(addprefix $(ACTIONS_PATH), $(ACTIONS_SRCS))
 
 OBJS = $(SRCS:.c=.o)
 

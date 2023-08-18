@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:15:46 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/27 19:10:37 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:26:54 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../include/push_swap.h"
 
 void	ft_sortradix(t_list **stack_a, t_list **stack_b, int len)
 {

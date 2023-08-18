@@ -6,11 +6,11 @@
 /*   By: nkietwee <nkietwee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:06:24 by nkietwee          #+#    #+#             */
-/*   Updated: 2023/03/29 12:31:04 by nkietwee         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:26:51 by nkietwee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"../include/push_swap.h"
 
 void	ft_in_to_stk_b(t_list **stack_a, t_list **stack_b, int len, int *count)
 {
